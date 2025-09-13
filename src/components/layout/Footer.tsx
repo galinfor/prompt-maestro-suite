@@ -5,10 +5,10 @@ const footerSections = [
   {
     title: 'Servicios',
     links: [
-      { name: 'Automatización IA', href: '/servicios#automatizacion' },
-      { name: 'ChatBots Inteligentes', href: '/servicios#chatbots' },
-      { name: 'VoiceBots', href: '/servicios#voicebots' },
-      { name: 'Avatares IA', href: '/servicios#avatares' },
+      { name: 'Automatización IA', href: '/servicios/automatizacion' },
+      { name: 'ChatBots Inteligentes', href: '/servicios/chatbots' },
+      { name: 'VoiceBots', href: '/servicios/voicebots' },
+      { name: 'Avatares IA', href: '/servicios/avatares' },
     ],
   },
   {

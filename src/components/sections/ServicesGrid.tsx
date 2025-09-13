@@ -8,28 +8,28 @@ const services = [
     title: 'Automatización IA',
     description: 'Automatizamos procesos complejos con algoritmos inteligentes que aprenden y optimizan continuamente.',
     features: ['Reducción de errores del 94%', 'Ahorro de tiempo del 67%', 'ROI del 185%'],
-    href: '/servicios#automatizacion'
+    href: '/servicios/automatizacion'
   },
   {
     icon: MessageSquare,
     title: 'ChatBots Inteligentes',
     description: 'Asistentes conversacionales que entienden contexto y proporcionan respuestas precisas y naturales.',
     features: ['Soporte 24/7', 'Integración omnicanal', 'Aprendizaje continuo'],
-    href: '/servicios#chatbots'
+    href: '/servicios/chatbots'
   },
   {
     icon: Mic,
     title: 'VoiceBots',
     description: 'Asistentes de voz que transforman la atención telefónica con tecnología de reconocimiento avanzado.',
     features: ['Reconocimiento natural', 'Múltiples idiomas', 'Análisis de sentimientos'],
-    href: '/servicios#voicebots'
+    href: '/servicios/voicebots'
   },
   {
     icon: UserCheck,
     title: 'Avatares IA',
     description: 'Representaciones visuales inteligentes para presentaciones, formación y atención al cliente.',
     features: ['Síntesis de voz realista', 'Gestos naturales', 'Personalización completa'],
-    href: '/servicios#avatares'
+    href: '/servicios/avatares'
   }
 ];
 
