@@ -32,7 +32,7 @@ export function CalendarModal({ children, triggerText = "Agendar reunión" }: Ca
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent className="max-w-5xl w-[95vw] h-[85vh] max-h-[900px] p-0 overflow-hidden relative">
+      <DialogContent className="max-w-5xl w-[95vw] h-[85vh] max-h-[900px] p-0 relative">
         <DialogHeader className="p-6 pb-4 border-b">
           <DialogTitle className="text-2xl font-bold">
             Agendar reunión gratuita

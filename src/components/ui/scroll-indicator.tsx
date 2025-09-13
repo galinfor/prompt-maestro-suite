@@ -49,11 +49,11 @@ export function ScrollIndicator({ targetRef }: ScrollIndicatorProps) {
   };
 
   return (
-    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-10">
+    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20 pointer-events-none">
       <button
         onClick={scrollToBottom}
         className={cn(
-          "flex items-center justify-center w-8 h-8 rounded-full",
+          "flex items-center justify-center w-8 h-8 rounded-full pointer-events-auto",
           "bg-primary/80 hover:bg-primary text-primary-foreground",
           "shadow-lg hover:shadow-xl transition-all duration-300",
           "animate-[bounce_2s_ease-in-out_infinite]"
