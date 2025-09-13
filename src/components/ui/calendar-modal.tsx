@@ -36,11 +36,11 @@ export function CalendarModal({ children, triggerText = "Agendar reunión" }: Ca
             Agendar reunión gratuita
           </DialogTitle>
         </DialogHeader>
-        <div className="flex-1 p-0 h-[calc(85vh-80px)] overflow-hidden">
+        <div className="flex-1 p-0 h-[calc(85vh-80px)] overflow-auto custom-scrollbar">
           <Cal 
             namespace="30min"
             calLink="daivd-rodriguez-kweqav/30min"
-            style={{width:"100%",height:"100%",overflow:"hidden"}}
+            style={{width:"100%",height:"100%",overflow:"auto"}}
             config={{"layout":"month_view","theme":"dark"}}
           />
         </div>
