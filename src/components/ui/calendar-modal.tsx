@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Calendar, Clock } from 'lucide-react';
+import { ScrollIndicator } from '@/components/ui/scroll-indicator';
 import Cal, { getCalApi } from "@calcom/embed-react";
 
 interface CalendarModalProps {
@@ -11,6 +12,7 @@ interface CalendarModalProps {
 
 export function CalendarModal({ children, triggerText = "Agendar reunión" }: CalendarModalProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     (async function () {
@@ -30,13 +32,16 @@ export function CalendarModal({ children, triggerText = "Agendar reunión" }: Ca
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent className="max-w-5xl w-[95vw] h-[85vh] max-h-[900px] p-0 overflow-hidden">
+      <DialogContent className="max-w-5xl w-[95vw] h-[85vh] max-h-[900px] p-0 overflow-hidden relative">
         <DialogHeader className="p-6 pb-4 border-b">
           <DialogTitle className="text-2xl font-bold">
             Agendar reunión gratuita
           </DialogTitle>
         </DialogHeader>
-        <div className="flex-1 p-0 h-[calc(85vh-80px)] overflow-auto custom-scrollbar">
+        <div 
+          ref={scrollRef}
+          className="flex-1 p-0 h-[calc(85vh-80px)] overflow-auto custom-scrollbar"
+        >
           <Cal 
             namespace="30min"
             calLink="daivd-rodriguez-kweqav/30min"
@@ -44,6 +49,7 @@ export function CalendarModal({ children, triggerText = "Agendar reunión" }: Ca
             config={{"layout":"month_view","theme":"dark"}}
           />
         </div>
+        <ScrollIndicator targetRef={scrollRef} />
       </DialogContent>
     </Dialog>
   );
