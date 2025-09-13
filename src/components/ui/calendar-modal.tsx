@@ -30,19 +30,21 @@ export function CalendarModal({ children, triggerText = "Agendar reunión" }: Ca
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent className="max-w-4xl w-full h-[80vh] max-h-[800px] p-0">
-        <DialogHeader className="p-6 pb-0">
+      <DialogContent className="max-w-4xl w-[90vw] h-[90vh] max-h-[700px] flex flex-col overflow-hidden">
+        <DialogHeader className="flex-shrink-0 p-6 pb-4 border-b">
           <DialogTitle className="text-2xl font-bold">
             Agendar reunión gratuita
           </DialogTitle>
         </DialogHeader>
-        <div className="flex-1 p-6 pt-4 h-full">
-          <Cal 
-            namespace="30min"
-            calLink="daivd-rodriguez-kweqav/30min"
-            style={{width:"100%",height:"100%",overflow:"scroll"}}
-            config={{"layout":"month_view","theme":"dark"}}
-          />
+        <div className="flex-1 overflow-hidden p-4">
+          <div className="h-full overflow-auto border rounded-lg">
+            <Cal 
+              namespace="30min"
+              calLink="daivd-rodriguez-kweqav/30min"
+              style={{width:"100%", minHeight:"500px", height:"auto"}}
+              config={{"layout":"month_view","theme":"dark"}}
+            />
+          </div>
         </div>
       </DialogContent>
     </Dialog>
