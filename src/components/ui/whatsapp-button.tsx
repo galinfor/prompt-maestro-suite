@@ -30,21 +30,27 @@ export function WhatsAppButton({
 
   if (variant === 'floating') {
     return (
-      <div className="fixed bottom-6 right-6 z-50">
-        <Button
-          onClick={handleClick}
-          variant="whatsapp"
-          size="lg"
-          className={cn(
-            "rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110",
-            "animate-pulse hover:animate-none",
-            className
-          )}
-          aria-label="Contactar por WhatsApp"
-        >
-          <MessageCircle className="h-6 w-6" />
-          <span className="hidden sm:inline ml-2">WhatsApp</span>
-        </Button>
+      <div className="fixed bottom-4 right-4 z-50">
+        <div className="relative">
+          {/* Chat bubble notification */}
+          <div className="absolute -top-12 -left-32 bg-white text-gray-800 px-4 py-2 rounded-lg shadow-lg border animate-bounce">
+            <div className="text-sm font-medium">¡Hola! 👋</div>
+            <div className="text-xs text-gray-600">¿Justo para automatizar tus procesos? Chatea con nosotros por WhatsApp</div>
+            <div className="absolute bottom-0 right-4 transform translate-y-1/2 rotate-45 w-2 h-2 bg-white border-r border-b"></div>
+          </div>
+          
+          <Button
+            onClick={handleClick}
+            className={cn(
+              "w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 border-0",
+              "animate-pulse hover:animate-none",
+              className
+            )}
+            aria-label="Contactar por WhatsApp"
+          >
+            <MessageCircle className="h-7 w-7" />
+          </Button>
+        </div>
       </div>
     );
   }

@@ -67,27 +67,50 @@ export function ToolsSection() {
           </p>
         </div>
 
-        {/* Tools Grid */}
-        <div className="mb-16">
-          <h3 className="text-xl font-semibold mb-6 text-center">
+        {/* Animated Tools Banners */}
+        <div className="mb-16 overflow-hidden">
+          <h3 className="text-xl font-semibold mb-8 text-center">
             Herramientas de IA que utilizamos
           </h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {tools.map((tool, index) => (
-              <Badge 
-                key={index}
-                variant="secondary" 
-                className="px-4 py-2 text-sm hover:bg-primary/10 hover:text-primary transition-colors cursor-default"
-              >
-                {tool.name}
-              </Badge>
-            ))}
-            <Badge 
-              variant="outline" 
-              className="px-4 py-2 text-sm border-dashed border-primary/30 text-primary"
-            >
-              +25 más...
-            </Badge>
+          
+          {/* First row - scrolling left */}
+          <div className="relative overflow-hidden mb-4">
+            <div className="flex animate-scroll-left gap-4 whitespace-nowrap">
+              {[...tools.slice(0, 10), ...tools.slice(0, 10)].map((tool, index) => (
+                <div 
+                  key={index}
+                  className="flex items-center gap-3 px-6 py-3 bg-card border border-border rounded-lg shadow-sm min-w-fit"
+                >
+                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                    <div className="w-4 h-4 bg-primary/30 rounded-sm" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-sm">{tool.name}</div>
+                    <div className="text-xs text-muted-foreground">{tool.category}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Second row - scrolling right */}
+          <div className="relative overflow-hidden">
+            <div className="flex animate-scroll-right gap-4 whitespace-nowrap">
+              {[...tools.slice(10), ...tools.slice(10)].map((tool, index) => (
+                <div 
+                  key={index}
+                  className="flex items-center gap-3 px-6 py-3 bg-card border border-border rounded-lg shadow-sm min-w-fit"
+                >
+                  <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
+                    <div className="w-4 h-4 bg-primary/30 rounded-sm" />
+                  </div>
+                  <div>
+                    <div className="font-medium text-sm">{tool.name}</div>
+                    <div className="text-xs text-muted-foreground">{tool.category}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

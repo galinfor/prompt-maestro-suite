@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { CalendarModal } from '@/components/ui/calendar-modal';
 import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
@@ -250,16 +251,12 @@ const Contacto = () => {
                 </h3>
                 <div className="bg-muted/50 rounded-lg p-8 text-center">
                   <p className="text-muted-foreground mb-4">
-                    Calendario de reuniones Cal.com
+                    Agenda tu reunión gratuita de 30 minutos
                   </p>
-                  <p className="text-sm text-muted-foreground">
-                    [Aquí se insertará el widget de Cal.com cuando esté configurado]
+                  <p className="text-sm text-muted-foreground mb-6">
+                    Selecciona un horario que te convenga y hablemos sobre tu proyecto
                   </p>
-                  <div className="mt-4">
-                    <Button variant="outline" size="lg">
-                      Abrir calendario
-                    </Button>
-                  </div>
+                  <CalendarModal triggerText="Abrir calendario" />
                 </div>
               </div>
 
